@@ -5,11 +5,15 @@ class ProductsAPI {
     constructor() {
         this.productos = [
         {
-           id: uuidv4(), title: 'Remera', price: 20,
+           id: uuidv4(), title: 'Remera', price: 200, img: "https://i.postimg.cc/ydh00Y3g/e2f29b1c13eda9f0fe4958e22d50ab92.jpg"
             
         },
         {
-            id: uuidv4(), title: 'Pantalón', price: 10, 
+            id: uuidv4(), title: 'Pantalón', price: 250, img: "https://i.postimg.cc/zvn2br80/pantalon-jeans-talle-48.png" 
+         },
+
+         {
+            id: uuidv4(), title: 'Gorra', price: 100, img: "https://i.postimg.cc/8zyKrwgQ/download.jpg" 
          }
         ];
     }
@@ -29,7 +33,7 @@ class ProductsAPI {
     }
 
     validateBody(data) {
-		if(!data.title || !data.price || typeof data.title !== 'string' || typeof data.price !== 'number') throw createError(400,'Datos invalidos');
+		if(!data.title || !data.price || typeof data.title !== 'string' ) throw createError(400,'Datos invalidos');
 	}
 
     getAll() {
@@ -52,7 +56,7 @@ save(data) {
 
 		const nuevoProducto = {
 			title: data.title,
-			price: data.price,
+			price: parseInt(data.price),
 			id: uuidv4(),
 		}
 

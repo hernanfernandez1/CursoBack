@@ -1,0 +1,17 @@
+<div class="flex">
+  <% products.forEach(item=> {  %>
+      <div class="card m-2 tarjeta">
+          <div class="row g-0">
+          <div class="col-md-5">
+              <img class="img-fluid rounded-start imagen" src= <%= item.img %>  >
+          </div>
+          <div class="col-md-7">
+              <div class="card-body">
+              <h5 class="card-title"><%= item.title %></h5>
+              <p class="card-text">Precio $<%= item.price %></p>
+              </div>
+          </div>
+          </div>
+      </div>
+  <% }); %>
+</div>
