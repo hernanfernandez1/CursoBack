@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Computadora",
+        "price": 250,
+        "id": 1
+    },
+    {
+        "title": "Notebook",
+        "price": 150,
+        "id": 2
+    },
+    {
+        "title": "Televisor",
+        "price": 320,
+        "id": 3
+    }
+]

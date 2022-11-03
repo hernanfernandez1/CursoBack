@@ -3,9 +3,9 @@ const { ProductsController } = require('../controller/products');
 
 const router = Router();
 
-router.get('/', async (req, res)=>{
+router.get('/', async (req, res) => {
     res.render('form')
- });
+});
 
 router.get('/:id', (req, res) => {
     const id = req.params.id;
@@ -16,7 +16,29 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
+    try {
+        
+
+        const body = req.body;
+        const newProduct = {
+            title: body.title,
+            price: body.price,
+            img: body.img
+        };
+        ProductsController.save(newProduct);
+        res.redirect('/');
+        return res.status(200).json({ msg: "Producto Agregado!" });
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({
+            error: error,
+        });
+    }
+})
+
+/* router.post('/', (req, res) => {
+
     const body = req.body;
     const newProduct = {
         title: body.title,
@@ -25,7 +47,7 @@ router.post('/', (req, res) => {
     
     ProductsController.save(newProduct);
     res.redirect('/');
-})
+}) */
 
 router.put('/:id', (req, res) => {
     const id = req.params.id;

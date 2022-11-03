@@ -1,16 +1,18 @@
 const express = require('express');
+const http = require("http");
 const mainRouter = require('../routes/index');
 const path = require('path');
-const {ProductsController} = require('../controller/products');
+const { ProductsController } = require('../controller/products');
 
 const app = express();
+const server = http.Server(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.set('view engine', 'ejs');
 const viewsPath = path.resolve(__dirname, '../../views');
 app.set('views', viewsPath);
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
 	const products = ProductsController.getAll();
@@ -47,4 +49,4 @@ router.post('/', async (req, res, next) => {
 })
 */
 
-module.exports = app;
+module.exports = server;
