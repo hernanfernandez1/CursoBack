@@ -1,0 +1,32 @@
+[
+	{
+		"id": "1",
+		"timestamp": "9/11/2022 12:09:43",
+		"nombre": "Remera",
+		"descripcion": "Remera Básica",
+		"codigo": 3121,
+		"foto": "https://i.postimg.cc/ydh00Y3g/e2f29b1c13eda9f0fe4958e22d50ab92.jpg",
+		"precio": 15000,
+		"stock": 100
+	},
+	{
+		"id": "2",
+		"timestamp": "9/11/2022 17:14:30",
+		"nombre": "Pantalón",
+		"descripcion": "Pantalón clásico",
+		"codigo": 5478,
+		"foto": "https://i.postimg.cc/zvn2br80/pantalon-jeans-talle-48.png",
+		"precio": 250,
+		"stock": 200
+	},
+	{
+		"id": "3",
+		"timestamp": "9/11/2022 17:13:38",
+		"nombre": "Gorra",
+		"descripcion": "Urbana",
+		"codigo": 9131,
+		"foto": "https://i.postimg.cc/8zyKrwgQ/download.jpg",
+		"precio": 100,
+		"stock": 15
+	}
+]
