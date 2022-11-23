@@ -1,0 +1,174 @@
+// Creación de Base 
+use ecommerce // Al no existir la base de datos al hacer switch nos la Creamos
+
+//Se crea la colección products
+db.createCollection('products')
+
+//Se crea la colección message 
+db.createCollection('message')
+
+// Se crea un array con 10 mensajes
+
+let arrayMessage = [
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 1',
+        time: '18:30 pm'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 2',
+        time: '18:50 pm'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 3',
+        time: '19:40 pm'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 4',
+        time: '14:20 pm'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 5',
+        time: '11:27 pm'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 6',
+        time: '10:20 am'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 7',
+        time: '05:20 am'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 8',
+        time: '11:30 am'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 9',
+        time: '10:12 am'
+    },
+    {
+        email: 'hernan.fer@gmail.com',
+        msg: 'Mensaje 10',
+        time: '23:19 pm'
+    }
+]
+
+// Se inserta los mensajes en la colección
+
+db.message.insertMany(arrayMessage)
+
+// Creamos una array con 10 productos
+let arrProducts = [
+    {
+        title:'Producto 1',
+        price: 120,
+        thumbnail:'Img 1'
+    },
+    {
+        title:'Producto 2',
+        price: 580,
+        thumbnail:'Img 2'
+    },
+    {
+        title:'Producto 3',
+        price: 900,
+        thumbnail:'Img 3'
+    },
+    {
+        title:'Producto 4',
+        price: 1280,
+        thumbnail:'img 4'
+    },
+    {
+        title:'Producto 5',
+        price: 1700,
+        thumbnail:'img 5'
+    },
+    {
+        title:'Producto 6',
+        price: 2300,
+        thumbnail:'img 6'
+    },
+    {
+        title:'Producto 7',
+        price: 2860,
+        thumbnail:'img 7'
+    },
+    {
+        title:'Producto 8',
+        price: 3350,
+        thumbnail:'img 8'
+    },
+    {
+        title:'Producto 9',
+        price: 4320,
+        thumbnail:'img 9'
+    },
+    {
+        title:'Producto 10',
+        price: 4990,
+        thumbnail:'img 10'
+    }
+]
+
+// Se insertan los productos a la colección
+db.products.insertMany(arrProducts)
+
+// Se muestran las dos colecciones
+db.message.find().pretty()
+db.products.find().pretty()
+
+// Se cuentan los documentos de ambas colecciones
+db.message.countDocuments()
+db.products.countDocuments()
+
+//Se agrega un nuevo producto a 'products'
+db.products.insertOne({title:'producto 11',price: 4999, thumbnail:'img 11'})
+
+//Se muestran los documentos que posean un precio menor a 1000 de la colección 'products'
+db.products.find({'price': {$lt: 1000}})
+
+// Se muestran los documentos que posean un precio mayor a 1000 y menor a 3000 de la colección 'products'
+db.products.find({
+  $and:[
+    {price: {$gt: 1000}},
+    {price: {$lt: 3000}}
+    ]
+})
+
+// Mostramos los documentos que posean un precio mayor a 3000 en la colección 'products'
+db.products.find({price: {$gt: 3000}})
+
+// Ordenamos los documentos de la colección 'products' del más barato al más caro, mostramos solo el nombre del tercer documento más barato
+db.products.find({},{title:1}).sort({price:1}).skip(2).limit(1)
+
+//Agregamos el campo 'stock' en todos los documentos de la colección 'products'
+db.products.updateMany({},{$set:{stock:100}})
+
+//Actualizamos todos los documentos de la colección 'products' que posean precio mayo a 4000, se le pasa el stock a 0
+db.products.updateMany({price:{$gt:4000}},{$set: {stock:0}})
+
+//Eliminamos todos los documentos de la colección 'products' que posean precios menor a 1000
+db.products.deleteMany({price: {$lt:1000}})
+
+// Creamos un usuario de solo lectura para la db ecommerce
+db.createUser(
+  {
+    user:'pepe',
+    pwd:'asd456',
+    roles:[
+      {
+        role:'read',db:'ecommerce'
+      }]
+})
+
+** PARA PODER UTILIZAR EL USUARIO REINICIAMOS EL SERVIDOR CON mongod --auth y desde el cliente entramos como mongosh -u pepe -p asd456
