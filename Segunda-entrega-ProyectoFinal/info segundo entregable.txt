@@ -1,0 +1,17 @@
+---Postman---
+
+/api/productos
+
+GET: '/' - Listar todos los productos.
+GET: '/:id?' - Buscar producto por id.
+POST: '/' - Incorporar producto al listado.
+PUT: '/:id' - Actualizar producto por id.
+DELETE: '/:id' - Borra producto por id.
+
+/api/carrito
+
+POST: '/' - Crea un carrito y devuelve su id.
+GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito.
+POST: '/:id/productos' - Para incorporar productos al carrito por su id de producto.
+DELETE: '/:id/productos/:id_prod' - Eliminar un producto o varios si este se encuentra duplicado en el carrito, por su id de carrito y de producto.
+DELETE: '/:id' - Vacía un carrito y lo elimina.
