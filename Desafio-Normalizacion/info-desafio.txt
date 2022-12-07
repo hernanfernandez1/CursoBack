@@ -1,0 +1,11 @@
+---URLS---
+
+/api/products
+
+GET: '/facker' - Devuelve 5 productos al azar generados con facker.
+
+/api/messages
+
+GET: '/' - Trae todos los mensajes contenidos en el json dentro de la carpeta data.
+GET: '/normalize' - Trae lo mensajes de la ruta anterior y los normaliza, también los guardo dentro de la carpeta data para después desnormalizarlos. 
+GET: '/denormalize' - Trae los mensajes de la ruta anterior y luego los desnormaliza.

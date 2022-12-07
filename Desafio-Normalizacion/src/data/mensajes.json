@@ -1,0 +1,57 @@
+[
+    {
+        "author": {
+            "id": "Seba@gmail.com", 
+            "nombre": "Sebastian", 
+            "apellido": "Perez", 
+            "edad": "32", 
+            "alias": "sebas",
+            "avatar": "random1"
+        },
+        "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus expedita praesentium magnam necessitatibus nostrum? Adipisci voluptas perspiciatis veritatis magnam! Inventore cum excepturi aliquam esse voluptatem magni veniam ipsa sint aperiam!"
+    },
+    {
+        "author": {
+            "id": "Juani@gmail.com", 
+            "nombre": "Juan Ignacio", 
+            "apellido": "Mendez", 
+            "edad": "26", 
+            "alias": "juani",
+            "avatar": "random2"
+        },
+        "text": "Atque obcaecati consequuntur quibusdam tempora officiis facere impedit voluptatem illum dolore. Quas aut eligendi molestias iusto vero impedit dicta debitis accusantium, reprehenderit iure atque, cupiditate assumenda natus blanditiis nisi minus."
+    },
+    {
+        "author": {
+            "id": "Fernando@gmail.com", 
+            "nombre": "Fernando", 
+            "apellido": "Rodriguez", 
+            "edad": "20", 
+            "alias": "ferrodri",
+            "avatar": "random3"
+        },
+        "text": "Cum eligendi similique, nihil necessitatibus corrupti exercitationem nemo voluptatibus perspiciatis molestias, officiis odio beatae? Accusamus culpa illum quibusdam nulla perspiciatis laborum voluptate voluptas facere pariatur blanditiis odit, sit qui quasi?"
+    },
+    {
+        "author": {
+            "id": "Pablo@gmail.com", 
+            "nombre": "Pablo", 
+            "apellido": "Martinez", 
+            "edad": "15", 
+            "alias": "pablo",
+            "avatar": "random4"
+        },
+        "text": "Reiciendis et nam quis porro blanditiis error eaque id, dolor accusamus consequuntur illo nisi saepe veniam repellat sint labore expedita cumque obcaecati quia? At dolore quasi voluptatem esse fuga molestias."
+    },
+    {
+        "author": {
+            "id": "Fernando@gmail.com", 
+            "nombre": "Fernando", 
+            "apellido": "Rodriguez", 
+            "edad": "20", 
+            "alias": "ferrodri",
+            "avatar": "random3"
+        },
+        "text": "Dolorum tempore eum, assumenda, hic rerum dicta, sunt et non soluta quia magni qui ducimus facere ab consequuntur in? Debitis, pariatur blanditiis odio doloribus sunt soluta temporibus explicabo sapiente odit!"
+    }
+]
