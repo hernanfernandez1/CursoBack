@@ -1,0 +1,8 @@
+1)POST: /api/signup
+Realiza el registro por "username" y "password" indicado en el body
+2)POST: /api/login
+Realiza el login por "username" y "password" indicado en el body
+3)GET: /api/home
+Muestra los datos de session
+4)GET: /api/logout
+Se desloguea y destruye la session actual
